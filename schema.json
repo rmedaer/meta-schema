@@ -24,9 +24,9 @@
       }
     },
     "methods": {
-      "type": "array",
-      "additionalItems": false,
-      "items": {
+      "type": "object",
+      "patternProperties": "^.+$",
+      "additionalProperties": {
         "$ref": "#/definitions/methodObject"
       }
     },
@@ -296,17 +296,11 @@
     "methodObject": {
       "type": "object",
       "required": [
-        "name",
         "result",
         "params"
       ],
       "additionalProperties": false,
       "properties": {
-        "name": {
-          "description": "The cannonical name for the method. The name MUST be unique within the methods array.",
-          "type": "string",
-          "minLength": 1
-        },
         "description": {
           "description": "A verbose explanation of the method behavior. GitHub Flavored Markdown syntax MAY be used for rich text representation.",
           "type": "string"
